@@ -1,0 +1,29 @@
+.not-found{
+  width: 100%;
+  height: calc(100vh - 60px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.not-found h1{
+  font-size: 120px;
+  letter-spacing: -15px;
+  font-weight: bold;
+}
+.not-found a{
+  text-decoration: none;
+  background-color: #116feb;
+  padding: 10px;
+  margin-top: 14px;
+  color:#FFF;
+  border: 2px solid #116feb;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.not-found a:hover{
+  background-color: #FFF;
+  color: #116feb;
+  
+}

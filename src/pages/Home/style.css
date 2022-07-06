@@ -20,6 +20,12 @@
   display: block;
 }
 
+.loading{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 14px;
+}
 .lista-filmes a {
   display: flex;
   align-items: center;
