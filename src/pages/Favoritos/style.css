@@ -48,7 +48,7 @@
   border-radius: 5px;
   color: white;
   margin-right: 5px;
-  border: 1px solid green;
+  border: 1px solid green;min-width: 105px;
 }
 
 .meus-filmes div button {
