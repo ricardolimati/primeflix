@@ -20,7 +20,7 @@ function Filme() {
       }).then((response) => {
         setFilme(response.data);
       }).catch(() => {
-        navigation("/", {replace: true});
+        navigation("/", { replace: true });
         return;
       })
     }
@@ -29,6 +29,20 @@ function Filme() {
       console.log("Componente foi desmontado!");
     }
   }, [navigation, id])
+
+  function salvarFilme() {
+    const minhaLista = localStorage.getItem("@primeflix");
+    let filmesSalvos = JSON.parse(minhaLista) || [];
+
+    const hasFilme = filmesSalvos.some((filmesSalvos) => filmesSalvos.id === filme.id);
+    if (hasFilme) {
+      alert("Este filme já esta na lista!");
+      return;
+    }
+    filmesSalvos.push(filme);
+    localStorage.setItem("@primeflix", JSON.stringify(filmesSalvos));
+    alert('Filme salvo!');
+  }
 
   if (!loading) {
     return (
@@ -45,9 +59,9 @@ function Filme() {
       <span>{filme.overview}</span>
       <strong>Avaliação: {filme.vote_average} / <small>10</small></strong>
       <div className="area-buttons">
-        <button>Salvar</button>
+        <button onClick={salvarFilme}>Salvar</button>
         <button>
-          <a target="_blank" rel="external noreferrer" href={`http://youtube.com/results?search_query=${filme.title} trailer`}>
+          <a target="blank" rel="external noreferrer" href={`http://youtube.com/results?search_query=${filme.title} trailer`}>
             Trailer
           </a>
         </button>
